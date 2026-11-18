@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1000" viewBox="0 0 1400 1000" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <filter id="sombra" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+    <linearGradient id="gradCentro" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3c873a"/>
+      <stop offset="1" stop-color="#2f74c0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Fundo -->
+  <rect width="1400" height="1000" fill="#f8fafc"/>
+
+  <!-- Título -->
+  <text x="700" y="52" text-anchor="middle" font-size="30" font-weight="700" fill="#0f172a">Dia 01 · Fundamentos do Node.js</text>
+  <text x="700" y="80" text-anchor="middle" font-size="16" fill="#64748b">O que é, como funciona por dentro e como rodar código</text>
+
+  <!-- Conexões (curvas do centro para os cartões) -->
+  <g fill="none" stroke-width="4" stroke-linecap="round">
+    <path d="M565,300 C480,300 480,205 400,205" stroke="#3c873a"/>
+    <path d="M565,300 C480,300 480,485 400,485" stroke="#e67e22"/>
+    <path d="M565,300 C470,300 470,765 400,765" stroke="#16a085"/>
+    <path d="M835,300 C920,300 920,205 1000,205" stroke="#2f74c0"/>
+    <path d="M835,300 C920,300 920,485 1000,485" stroke="#8e44ad"/>
+    <path d="M835,300 C930,300 930,765 1000,765" stroke="#c0392b"/>
+  </g>
+
+  <!-- Nó central -->
+  <g filter="url(#sombra)">
+    <rect x="565" y="245" width="270" height="110" rx="55" fill="url(#gradCentro)"/>
+  </g>
+  <text x="700" y="292" text-anchor="middle" font-size="26" font-weight="700" fill="#fff">Node.js</text>
+  <text x="700" y="322" text-anchor="middle" font-size="15" fill="#e2e8f0">JavaScript fora do navegador</text>
+
+  <!-- ===== Cartão 1: O QUE É (esq. topo) ===== -->
+  <g transform="translate(40,100)">
+    <rect width="360" height="210" rx="14" fill="#fff" stroke="#3c873a" stroke-width="2.5" filter="url(#sombra)"/>
+    <path d="M0,14 a14,14 0 0 1 14,-14 h332 a14,14 0 0 1 14,14 v28 h-360 z" fill="#3c873a"/>
+    <text x="18" y="29" font-size="18" font-weight="700" fill="#fff">1 · O QUE É</text>
+    <g font-size="15" fill="#1e293b">
+      <text x="18" y="70"><tspan fill="#3c873a" font-weight="700">• </tspan>Runtime JavaScript fora do navegador</text>
+      <text x="18" y="97"><tspan fill="#3c873a" font-weight="700">• </tspan>Criado por Ryan Dahl em 2009</text>
+      <text x="18" y="124"><tspan fill="#3c873a" font-weight="700">• </tspan>Não é linguagem nem framework</text>
+      <text x="18" y="151"><tspan fill="#3c873a" font-weight="700">• </tspan>APIs, CLIs, ferramentas, scripts</text>
+      <text x="18" y="178"><tspan fill="#3c873a" font-weight="700">• </tspan>Forte em I/O; fraco em CPU pesada</text>
+    </g>
+  </g>
+
+  <!-- ===== Cartão 2: I/O NÃO BLOQUEANTE (esq. meio) ===== -->
+  <g transform="translate(40,380)">
+    <rect width="360" height="210" rx="14" fill="#fff" stroke="#e67e22" stroke-width="2.5" filter="url(#sombra)"/>
+    <path d="M0,14 a14,14 0 0 1 14,-14 h332 a14,14 0 0 1 14,14 v28 h-360 z" fill="#e67e22"/>
+    <text x="18" y="29" font-size="18" font-weight="700" fill="#fff">2 · I/O NÃO BLOQUEANTE</text>
+    <g font-size="15" fill="#1e293b">
+      <text x="18" y="70"><tspan fill="#e67e22" font-weight="700">• </tspan>Pede a leitura e segue em frente</text>
+      <text x="18" y="97"><tspan fill="#e67e22" font-weight="700">• </tspan>SO / libuv avisa quando terminar</text>
+      <text x="18" y="124"><tspan fill="#e67e22" font-weight="700">• </tspan>Callback / Promise recebe o resultado</text>
+      <text x="18" y="151"><tspan fill="#e67e22" font-weight="700">• </tspan>Milhares de conexões com 1 thread</text>
+      <text x="18" y="178"><tspan fill="#e67e22" font-weight="700">• </tspan>Versões *Sync (readFileSync) travam tudo</text>
+    </g>
+  </g>
+
+  <!-- ===== Cartão 3: RODANDO CÓDIGO (esq. baixo) ===== -->
+  <g transform="translate(40,660)">
+    <rect width="360" height="210" rx="14" fill="#fff" stroke="#16a085" stroke-width="2.5" filter="url(#sombra)"/>
+    <path d="M0,14 a14,14 0 0 1 14,-14 h332 a14,14 0 0 1 14,14 v28 h-360 z" fill="#16a085"/>
+    <text x="18" y="29" font-size="18" font-weight="700" fill="#fff">3 · RODANDO CÓDIGO</text>
+    <g font-size="15" fill="#1e293b">
+      <text x="18" y="70"><tspan fill="#16a085" font-weight="700">• </tspan><tspan font-family="monospace">node</tspan> → abre o REPL interativo</text>
+      <text x="18" y="97"><tspan fill="#16a085" font-weight="700">• </tspan><tspan font-family="monospace">node app.js</tspan> → executa o arquivo</text>
+      <text x="18" y="124"><tspan fill="#16a085" font-weight="700">• </tspan><tspan font-family="monospace">node --watch app.js</tspan> → recarrega</text>
+      <text x="18" y="151"><tspan fill="#16a085" font-weight="700">• </tspan><tspan font-family="monospace">node -v</tspan> / <tspan font-family="monospace">npm -v</tspan> → versões</text>
+      <text x="18" y="178"><tspan fill="#16a085" font-weight="700">• </tspan>Prefira versões LTS (números pares)</text>
+    </g>
+  </g>
+
+  <!-- ===== Cartão 4: ARQUITETURA (dir. topo) ===== -->
+  <g transform="translate(1000,100)">
+    <rect width="360" height="210" rx="14" fill="#fff" stroke="#2f74c0" stroke-width="2.5" filter="url(#sombra)"/>
+    <path d="M0,14 a14,14 0 0 1 14,-14 h332 a14,14 0 0 1 14,14 v28 h-360 z" fill="#2f74c0"/>
+    <text x="18" y="29" font-size="18" font-weight="700" fill="#fff">4 · ARQUITETURA</text>
+    <g font-size="15" fill="#1e293b">
+      <text x="18" y="70"><tspan fill="#2f74c0" font-weight="700">• </tspan><tspan font-weight="700">V8</tspan>: compila JS → código de máquina</text>
+      <text x="18" y="97"><tspan fill="#2f74c0" font-weight="700">• </tspan><tspan font-weight="700">libuv</tspan>: event loop + thread pool</text>
+      <text x="18" y="124"><tspan fill="#2f74c0" font-weight="700">• </tspan><tspan font-weight="700">Bindings C++</tspan>: ligam JS ao SO</text>
+      <text x="18" y="151"><tspan fill="#2f74c0" font-weight="700">• </tspan><tspan font-weight="700">APIs</tspan>: fs, http, crypto, path…</text>
+      <text x="18" y="178"><tspan fill="#2f74c0" font-weight="700">• </tspan>Seu código fica no topo da pilha</text>
+    </g>
+  </g>
+
+  <!-- ===== Cartão 5: EVENT LOOP (dir. meio) ===== -->
+  <g transform="translate(1000,380)">
+    <rect width="360" height="210" rx="14" fill="#fff" stroke="#8e44ad" stroke-width="2.5" filter="url(#sombra)"/>
+    <path d="M0,14 a14,14 0 0 1 14,-14 h332 a14,14 0 0 1 14,14 v28 h-360 z" fill="#8e44ad"/>
+    <text x="18" y="29" font-size="18" font-weight="700" fill="#fff">5 · EVENT LOOP</text>
+    <g font-size="15" fill="#1e293b">
+      <text x="18" y="70"><tspan fill="#8e44ad" font-weight="700">• </tspan>1 thread principal executa seu JS</text>
+      <text x="18" y="97"><tspan fill="#8e44ad" font-weight="700">• </tspan>Stack vazia → loop pega callbacks</text>
+      <text x="18" y="124"><tspan fill="#8e44ad" font-weight="700">• </tspan>Fases: timers → poll (I/O) → check</text>
+      <text x="18" y="151"><tspan fill="#8e44ad" font-weight="700">• </tspan>Microtasks (Promises) furam a fila</text>
+      <text x="18" y="178"><tspan fill="#8e44ad" font-weight="700">• </tspan>Nunca bloqueie a thread principal!</text>
+    </g>
+  </g>
+
+  <!-- ===== Cartão 6: GLOBAIS (dir. baixo) ===== -->
+  <g transform="translate(1000,660)">
+    <rect width="360" height="210" rx="14" fill="#fff" stroke="#c0392b" stroke-width="2.5" filter="url(#sombra)"/>
+    <path d="M0,14 a14,14 0 0 1 14,-14 h332 a14,14 0 0 1 14,14 v28 h-360 z" fill="#c0392b"/>
+    <text x="18" y="29" font-size="18" font-weight="700" fill="#fff">6 · GLOBAIS</text>
+    <g font-size="15" fill="#1e293b">
+      <text x="18" y="70"><tspan fill="#c0392b" font-weight="700">• </tspan><tspan font-family="monospace">globalThis</tspan> (não existe window/DOM)</text>
+      <text x="18" y="97"><tspan fill="#c0392b" font-weight="700">• </tspan><tspan font-family="monospace">process</tspan>: argv, env, exit, cwd()</text>
+      <text x="18" y="124"><tspan fill="#c0392b" font-weight="700">• </tspan><tspan font-family="monospace">console</tspan>, <tspan font-family="monospace">setTimeout</tspan>, <tspan font-family="monospace">setImmediate</tspan></text>
+      <text x="18" y="151"><tspan fill="#c0392b" font-weight="700">• </tspan>CJS: <tspan font-family="monospace">require</tspan>, <tspan font-family="monospace">__dirname</tspan></text>
+      <text x="18" y="178"><tspan fill="#c0392b" font-weight="700">• </tspan>ESM: <tspan font-family="monospace">import</tspan>, <tspan font-family="monospace">import.meta.dirname</tspan></text>
+    </g>
+  </g>
+
+  <!-- ===== Mini diagrama: a pilha do Node ===== -->
+  <text x="700" y="410" text-anchor="middle" font-size="17" font-weight="700" fill="#334155">A pilha do Node</text>
+  <g font-size="15" text-anchor="middle" fill="#1e293b">
+    <rect x="545" y="425" width="310" height="46" rx="8" fill="#fef3c7" stroke="#d97706"/>
+    <text x="700" y="453" font-weight="700">Seu código JavaScript</text>
+
+    <rect x="545" y="479" width="310" height="46" rx="8" fill="#dcfce7" stroke="#3c873a"/>
+    <text x="700" y="507">APIs do Node: fs · http · crypto</text>
+
+    <rect x="545" y="533" width="310" height="46" rx="8" fill="#e0e7ff" stroke="#4f46e5"/>
+    <text x="700" y="561">Bindings C++</text>
+
+    <rect x="545" y="587" width="150" height="46" rx="8" fill="#dbeafe" stroke="#2f74c0"/>
+    <text x="620" y="608" font-weight="700">V8</text>
+    <text x="620" y="625" font-size="12">executa o JS</text>
+    <rect x="705" y="587" width="150" height="46" rx="8" fill="#f3e8ff" stroke="#8e44ad"/>
+    <text x="780" y="608" font-weight="700">libuv</text>
+    <text x="780" y="625" font-size="12">event loop + I/O</text>
+
+    <rect x="545" y="641" width="310" height="46" rx="8" fill="#e5e7eb" stroke="#64748b"/>
+    <text x="700" y="669">Sistema Operacional</text>
+  </g>
+
+  <!-- Seta "fluxo" ao lado da pilha -->
+  <g stroke="#94a3b8" stroke-width="2" fill="#94a3b8">
+    <line x1="530" y1="430" x2="530" y2="676"/>
+    <path d="M524,670 L530,684 L536,670 z" stroke="none"/>
+  </g>
+  <text x="520" y="560" font-size="12" fill="#64748b" text-anchor="middle" transform="rotate(-90 520 560)">sua chamada desce até o SO</text>
+
+  <!-- Mini fluxo bloqueante x não bloqueante -->
+  <g font-size="13" fill="#334155">
+    <text x="700" y="730" text-anchor="middle" font-size="15" font-weight="700">Bloqueante × não bloqueante</text>
+    <text x="555" y="758" fill="#c0392b" font-weight="700">readFileSync</text>
+    <rect x="660" y="746" width="150" height="16" rx="4" fill="#fecaca"/>
+    <text x="735" y="758" text-anchor="middle" font-size="11">esperando… nada roda</text>
+    <rect x="812" y="746" width="40" height="16" rx="4" fill="#fde68a"/>
+    <text x="555" y="790" fill="#3c873a" font-weight="700">readFile</text>
+    <rect x="660" y="778" width="30" height="16" rx="4" fill="#fde68a"/>
+    <rect x="692" y="778" width="118" height="16" rx="4" fill="#bbf7d0"/>
+    <text x="751" y="790" text-anchor="middle" font-size="11">outras tarefas rodam</text>
+    <rect x="812" y="778" width="40" height="16" rx="4" fill="#fde68a"/>
+    <text x="832" y="815" text-anchor="middle" font-size="11" fill="#64748b">callback</text>
+  </g>
+
+  <!-- Rodapé: frase-chave -->
+  <g filter="url(#sombra)">
+    <rect x="250" y="905" width="900" height="62" rx="31" fill="#0f172a"/>
+  </g>
+  <text x="700" y="943" text-anchor="middle" font-size="18" fill="#f8fafc">🔑  <tspan font-weight="700">Node = V8 + libuv + APIs.</tspan> Uma thread para o seu JS, muitas para o I/O.</text>
+</svg>
