@@ -1,4 +1,4 @@
-# 🟢 Trilha Node.js + TypeScript
+# 🟢 Trilha Node.js - TypeScript
 
 Um tópico por dia. Cada dia tem **explicação**, **mapa mental desenhado**, **código**, **exercícios** e **quiz** para fixar o conteúdo.
 
